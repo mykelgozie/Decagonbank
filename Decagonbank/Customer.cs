@@ -106,7 +106,7 @@ namespace Decagonbank
 
            
         Customer Acct = account.FindAccount(acctNumber);
-            Acct.DepositCash(amount,this.Acctnumber, note, name);
+            Acct.DepositCash(amount,this.Acctnumber, note,name);
             WithdrawCash(amount,note);
 
 

@@ -96,5 +96,25 @@ namespace Decagonbank
             }
 
             }
+
+            public void GetAllAccount()
+            {
+
+            Console.WriteLine("Accounts Currently Created");
+
+                    foreach (var item in allAccounts)
+                    {
+
+                Console.WriteLine( item.Name + " " + item.Acctnumber );
+
+
+
+                    }
+
+
+            }
+
+
+
         }
 }
