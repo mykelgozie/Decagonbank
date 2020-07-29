@@ -10,9 +10,8 @@ namespace Decagonbank
     {
         static void Main(string[] args)
         {
-
-            Login:
             BankClass bank = new BankClass();
+            Login:
             Console.WriteLine("Welcome to Decagon Bank");
             Console.WriteLine("Enter 1 to Login");
             Console.WriteLine("Enter 2 to Create new account");

@@ -10,7 +10,7 @@ namespace Decagonbank
 
 
             //List contains all customer accounts 
-            private static List<Customer> allAccounts = new List<Customer>();
+            private  List<Customer> allAccounts = new List<Customer>();
 
 
             //add new Customer 
