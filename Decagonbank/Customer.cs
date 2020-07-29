@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection.Emit;
 using System.Text;
 
 namespace Decagonbank
@@ -31,9 +33,11 @@ namespace Decagonbank
         }
         private decimal balance;
 
+        //Customer transactions
+
         private List<TransactionClass> allTransaction = new List<TransactionClass>();
 
-
+        //Constructor to create new Customer 
         public Customer(string name, string email, string type, string password)
         {
 
@@ -44,23 +48,14 @@ namespace Decagonbank
             this.Email = email;
             this.Type = type;
             this.Password = password;
-            //string note = "Initial Deposit";
             this.Opendate = DateTime.Now.ToString("MM/dd/yyyy");
-
-
-
-            //DepositCash(cash, Acctnumber, note, Name);
-
-           
-           
-
 
 
         }
 
 
 
-
+        //deposit cash to bank 
         public void DepositCash(decimal amount, int acctnum, string note, string name)
         {
             if (amount < 0)
@@ -81,6 +76,7 @@ namespace Decagonbank
 
         }
 
+        //withdraw cash from bank
         public void WithdrawCash(decimal amount, string note)
         {
 
@@ -100,6 +96,7 @@ namespace Decagonbank
 
         }
 
+        //tranfer cash to another account
         public void TransferCash(decimal amount, int acctNumber, string note, string name, BankClass account)
         {
             CheckAccount(amount);
@@ -112,6 +109,7 @@ namespace Decagonbank
 
         }
 
+        //all transaction history
         public void TransactionHistory()
         {
             Console.WriteLine($"Transaction   Amount  Acount       Name          Balance       Note      Date");
@@ -127,7 +125,7 @@ namespace Decagonbank
 
         }
 
-
+         //Validation account balance before debit
         public void CheckAccount(decimal value)
         {
             if (value < 1)

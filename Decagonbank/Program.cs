@@ -149,7 +149,7 @@ namespace Decagonbank
 
                             Console.WriteLine("Account Not found !");
                         }
-                        //decimal amount, int acctNumber, string note, string name, BankClass account)
+                      
 
                         BankClass chek = new BankClass();
                         
@@ -157,16 +157,39 @@ namespace Decagonbank
                         user.TransferCash(amt_trans, intnum, trans_note, trans_name, bank);
 
                         user.TransactionHistory();
-                     
 
 
 
 
 
 
+                        Console.WriteLine("Enter 1 to return to Menu");
+                        string valone = Console.ReadLine();
+
+                        try
+                        {
+                            Validate(valone);
+                            if (Int32.Parse(valone) != 1)
+                            {
+
+                                throw new ArgumentOutOfRangeException(" Invalid Number Entered ");
+                            }
+
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Invalid Number Entered ");
+                            return;
+                        }
 
 
+                        int val1 = Int32.Parse(valone);
 
+                        if (val1 == 1)
+                        {
+
+                            goto Registered_login;
+                        }
 
                         break;
 
@@ -370,6 +393,7 @@ namespace Decagonbank
 
                     bank.AddCustomer(name, email, acct, password);
 
+                    bank.GetAllAccount();
 
 
 
@@ -401,151 +425,7 @@ namespace Decagonbank
                     goto Login;
                     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //AccountsClass allAccounts = new AccountsClass();
-
-            //Console.WriteLine("Wecome To Decagon Bank !!");
-            //Console.WriteLine("Enter 1 to Login ");
-            //Console.WriteLine("Enter 2 to Create New account ");
-            //string transact =  Console.ReadLine();
-
-
-
-            //if (!Int32.TryParse(value, out int a))
-            //{
-
-            //    Console.WriteLine(" please enter a valid transaction ");
-            //    return;
-
-            //}
-
-            //int inTransact = Int32.Parse(value);
-
-            //if (inTransact != 1 && inTransact != 2)
-            //{
-
-            //    Console.WriteLine(" please enter a valid transaction ");
-            //    return;
-            //}
-
-
-            //if ( inTransact == 1)
-            //{
-
-            //    Console.WriteLine(" Login ");
-
-            //}
-
-
-            //if (inTransact == 2)
-            //{
-
-            //    Console.WriteLine(" Register");
-
-            //}
-
-
-
-            //(string name, string email, string type, string password)
-            //decimal amount, int acctNum, string note, string name
-            //decimal amount, int acctNum, string note, string name
-
-            // Customer cus = new Customer("michael", "my@gmail.com", "SAVING" ,"12345");
-
-            // bank.AddAccount(cus);
-
-            // try
-            // {
-
-            //     bank.login("m@gmail.com", "12345");
-            // }
-            // catch (Exception e)
-            // {
-
-            //     Console.WriteLine("Invalid user");
-
-            // }
-
-
-
-
-            //Customer check =  bank.login("my@gmail.com", "12345");
-
-            // Console.WriteLine(check.Balance);
-
-
-
-            //Customer hey = new Customer("nwosu", "jbj@gmail.com", "SAVING", "12345", 1000);
-
-            //try
-            //{
-            //    cus.WithdrawCash(500, "withdrawer", "me");
-
-            //}
-            //catch (Exception e)
-            //{
-
-            //    Console.WriteLine("Account minimum balance should be 1000 " );
-            //}
-
-            //cus.DepositCash(0, 123, "school fees", "chi");
-            //cus.WithdrawCash(250, "withdrawer", "me");
-
-            //cus.TransactionHistory();
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -556,6 +436,7 @@ namespace Decagonbank
 
         }
 
+        //validate and check for number integer and particular entry command
         static void NumberValidate(string value)
         {
 
@@ -582,6 +463,7 @@ namespace Decagonbank
 
         }
 
+        //validate and check for integer only
         static void Validate(string value)
         {
 

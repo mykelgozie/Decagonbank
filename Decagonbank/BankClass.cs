@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Decagonbank
@@ -8,9 +9,11 @@ namespace Decagonbank
     {
 
 
-        
+            //List contains all customer accounts 
             private List<Customer> allAccounts = new List<Customer>();
 
+
+            //add new Customer 
             public void AddAccount(Customer account)
             {
 
@@ -18,6 +21,7 @@ namespace Decagonbank
 
             }
 
+            //Process customer login
             public Customer login(string email, string password)
             {
 
@@ -55,6 +59,8 @@ namespace Decagonbank
 
             }
 
+            
+             //add new Customer 
             public void  AddCustomer(string name, string email, string type, string password) {
 
 
@@ -64,6 +70,7 @@ namespace Decagonbank
 
             }
 
+            //find  a particular account and return account if found
             public Customer FindAccount(int accountnum )
             {
 
@@ -97,6 +104,7 @@ namespace Decagonbank
 
             }
 
+            //get all registered account
             public void GetAllAccount()
             {
 

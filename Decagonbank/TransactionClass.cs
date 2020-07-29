@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Transactions;
 
 namespace Decagonbank
 {
@@ -15,6 +16,7 @@ namespace Decagonbank
         public decimal Amount { get; set; }
         public decimal TranBalance { get; set; }
 
+        //Transaction 
         public TransactionClass(decimal amount , int acctNum, string note, string date , string name, string type, decimal balance )
         {
             this.Acctnumber = acctNum;
