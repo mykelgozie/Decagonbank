@@ -10,7 +10,7 @@ namespace Decagonbank
 
 
             //List contains all customer accounts 
-            private List<Customer> allAccounts = new List<Customer>();
+            private static List<Customer> allAccounts = new List<Customer>();
 
 
             //add new Customer 
@@ -113,7 +113,7 @@ namespace Decagonbank
                     foreach (var item in allAccounts)
                     {
 
-                Console.WriteLine( item.Name + " " + item.Acctnumber );
+                Console.WriteLine( item.Name + " " + item.Acctnumber +  "  " + item.Password );
 
 
 

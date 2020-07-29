@@ -11,9 +11,7 @@ namespace Decagonbank
         static void Main(string[] args)
         {
             Login:
-            Customer cus = new Customer("michael", "my@gmail.com", "SAVING" ,"12345");
             BankClass bank = new BankClass();
-            bank.AddAccount(cus);
             Console.WriteLine("Welcome to Decagon Bank");
             Console.WriteLine("Enter 1 to Login");
             Console.WriteLine("Enter 2 to Create new account");
@@ -35,14 +33,17 @@ namespace Decagonbank
 
                 Console.WriteLine("Please Enter Your Email");
                 string email = Console.ReadLine();
+                string email1 = email.Trim();
+
 
                 Console.WriteLine("Please Enter Your Password");
                 string password = Console.ReadLine();
+                string password1 = password.Trim();
 
                 try
                 {
 
-                    bank.login("my@gmail.com", "12345");
+                    bank.login(email1, password1);
                 }
                 catch (Exception e)
                 {
@@ -51,13 +52,14 @@ namespace Decagonbank
 
                 }
 
-                Customer user = bank.login("my@gmail.com", "12345");
+                Customer user = bank.login(email1, password1);
 
                 Registered_login:
 
                 Console.WriteLine(" Welcome  " + user.Name);
                 Console.WriteLine(" Account Number  " + user.Acctnumber);
                 Console.WriteLine(" Account Balance  " + user.Balance);
+
 
 
 
@@ -351,13 +353,14 @@ namespace Decagonbank
                 Register:
 
                     Console.WriteLine(" Please Enter Your Email");
-                    string email = Console.ReadLine();
+                    string email = Console.ReadLine().Trim();
+                    
 
                     Console.WriteLine(" Please Enter Your FullName ");
                     string name = Console.ReadLine();
 
                     Console.WriteLine(" Please Enter Your Password");
-                    string password = Console.ReadLine();
+                    string password = Console.ReadLine().Trim();
 
                     Console.WriteLine("Ënter 1 for Savings Account");
                     Console.WriteLine("Ënter 2 for Current Account");
